@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Customer Details Form</title>
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Cloud@Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h1>Customer Details Form</h1>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input v-model="customerDetails.email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"><br>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input v-model="customerDetails.password" type="password" class="form-control" id="password" placeholder="Password" autocomplete="off"><br>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input v-model="customerDetails.phone" type="tel" class="form-control" id="phone" placeholder="Enter phone number"><br>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea v-model="customerDetails.address" class="form-control" id="address" rows="3" placeholder="Enter address"></textarea><br>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input v-model="customerDetails.dob" type="date" class="form-control" id="dob"><br>
+        </div>
+        <button @click="submitCustomerDetails" type="button" class="btn btn-warning">Submit</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app.js"></script>
+    <footer>
+        <p style="text-align: center;">&copy; 2023 Home Cloud Initiative. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <title>Cloud@Home</title>
+
+  <style>
+    /* Custom CSS for columns */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    /* Clear floats after the columns */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Cloud@Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control1 me-sm-2" type="search" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <button class="btn btn-success mx-2"><a href="login.html" style="color: black; text-decoration: none;">Login</a>
+        </button>
+        <button class="btn btn-primary"><a href="register.html" style="color: black; text-decoration: none;">Register</a>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="row">
+      <div class="column">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 40rem; margin-left: 2rem;">
+          <div class="card-header"></div>
+          <div class="card-body">
+            <h4 class="card-title">About the Initiative</h4>
+            <p class="card-text">Our Home Cloud Initiative aims to empower individuals and families by providing a
+              secure and private cloud solution within the comfort of their own homes. Say goodbye to reliance on
+              external servers and take control of your data.</p>
+          </div>
+        </div>
+
+        <div class="card text-white bg-primary mb-3" style="max-width: 40rem;margin-left: 2rem;margin-top: 2rem;">
+          <div class="card-header"></div>
+          <div class="card-body">
+            <h4 class="card-title">Benefits of Home Cloud</h4>
+            <p class="card-text">
+              <ul>
+                <li>Privacy and Data Control: Your data remains within your premises, ensuring complete control and
+                  confidentiality.</li>
+                <li>Security: Enjoy enhanced security measures tailored to your specific needs and preferences.</li>
+                <li>Cost-Efficiency: Eliminate recurring subscription fees associated with external cloud services.</li>
+                <li>Customization: Tailor your cloud infrastructure to suit your storage and computing requirements.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card text-white bg-warning mb-3" style="max-width: 40rem;">
+          <div class="card-header"></div>
+          <div class="card-body">
+            <h4 class="card-title">Getting Started</h4>
+            <p class="card-text"><p>Embark on the journey of creating your very own personal cloud! Are you ready to take control of your data and
+              harness the potential of a secure, private cloud right in the comfort of your home? Delve into our wealth of
+              resources and comprehensive guides to kickstart your home cloud initiative.</p>
+          <p>Discover the power of having your data at your fingertips, with the ability to customize and organize your cloud
+              infrastructure to fit your unique needs. Our guides will walk you through the setup process, ensuring a seamless
+              transition to a private cloud solution that prioritizes your privacy and security.</p>
+              <p>If you're interested in getting started and want to know more about our offerings, click <a
+                href="customer_details_form.html">here</a> to fill out a form with your details.</p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <footer>
+    <p style="text-align: center;">&copy; 2023 Home Cloud Initiative. All rights reserved.</p>
+</footer>
+</body>
+
+</html>
