@@ -3091,6 +3091,23 @@ textarea.form-control-lg {
   opacity: var(--bs-btn-disabled-opacity);
 }
 
+.btn-prime {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #2a9fd6;
+  --bs-btn-border-color: #2a9fd6;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #2487b6;
+  --bs-btn-hover-border-color: #227fab;
+  --bs-btn-focus-shadow-rgb: 74, 173, 220;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #227fab;
+  --bs-btn-active-border-color: #2077a1;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #2a9fd6;
+  --bs-btn-disabled-border-color: #2a9fd6;
+}
+
 .btn-primary {
   --bs-btn-color: #fff;
   --bs-btn-bg: #2a9fd6;
@@ -3125,6 +3142,22 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #555;
 }
 
+.btn-succ {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #77b300;
+  --bs-btn-border-color: #77b300;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #659800;
+  --bs-btn-hover-border-color: #5f8f00;
+  --bs-btn-focus-shadow-rgb: 139, 190, 38;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #5f8f00;
+  --bs-btn-active-border-color: #598600;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #77b300;
+  --bs-btn-disabled-border-color: #77b300;
+}
 .btn-success {
   --bs-btn-color: #fff;
   --bs-btn-bg: #77b300;
@@ -3140,6 +3173,23 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #77b300;
   --bs-btn-disabled-border-color: #77b300;
+}
+
+.btn-inf {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #93c;
+  --bs-btn-border-color: #93c;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #822bad;
+  --bs-btn-hover-border-color: #7a29a3;
+  --bs-btn-focus-shadow-rgb: 168, 82, 212;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #7a29a3;
+  --bs-btn-active-border-color: #732699;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #93c;
+  --bs-btn-disabled-border-color: #93c;
 }
 
 .btn-info {
@@ -3159,6 +3209,22 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #93c;
 }
 
+.btn-warn {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #f80;
+  --bs-btn-border-color: #f80;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d97400;
+  --bs-btn-hover-border-color: #cc6d00;
+  --bs-btn-focus-shadow-rgb: 255, 154, 38;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #cc6d00;
+  --bs-btn-active-border-color: #bf6600;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #f80;
+  --bs-btn-disabled-border-color: #f80;
+}
 .btn-warning {
   --bs-btn-color: #fff;
   --bs-btn-bg: #f80;
@@ -3174,6 +3240,23 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #f80;
   --bs-btn-disabled-border-color: #f80;
+}
+
+.btn-dang {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #c00;
+  --bs-btn-border-color: #c00;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #ad0000;
+  --bs-btn-hover-border-color: #a30000;
+  --bs-btn-focus-shadow-rgb: 212, 38, 38;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #a30000;
+  --bs-btn-active-border-color: #990000;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #c00;
+  --bs-btn-disabled-border-color: #c00;
 }
 
 .btn-danger {
@@ -12126,22 +12209,52 @@ textarea.form-control-lg {
   border-width: 1px 0 0;
 }
 
+.btn-prime
+{
+  margin-left: 1rem;
+  margin-top: 2rem;
+  background-color: #2a9fd6;
+}
 .btn-primary {
   background-color: #2a9fd6;
 }
 .btn-secondary {
   background-color: #555;
 }
+
+.btn-succ {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  background-color: #77b300;
+}
+
 .btn-success {
   background-color: #77b300;
+}
+.btn-inf {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  background-color: #93c;
 }
 .btn-info {
   background-color: #93c;
 }
+
+.btn-warn {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  background-color: #f80;
+}
+
 .btn-warning {
   background-color: #f80;
   margin-top: 1.0rem;
   margin-left: 2.0rem;
+}
+.btn-dang {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  background-color: #c00;
 }
 .btn-danger {
   background-color: #c00;

@@ -8,6 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -79,6 +80,53 @@
     </div>
   </nav>
 
+  <div id="app">
+    <label for="selectCategory">Select File Category:</label>
+    <select id="selectCategory" v-model="selectedCategory">
+      
+      <option value="all">All</option>
+      <option value="video">Video</option>
+      <option value="music">Music</option>
+      <option value="image">Image</option>
+      <option value="doc">Document</option>
+      <option value="others">Others</option>
+    </select>
+  
+    <!-- Button to load file list -->
+    <button @click="loadFileList">Load File List</button>
+  
+    <!-- Pagination -->
+    <button @click="prevPage" :disabled="pageNo === 1">Previous Page</button>
+    <span>Page: {{ pageNo }}</span>
+    <button @click="nextPage">Next Page</button>
+  
+    <!-- Display File List -->
+    <ul>
+      <li v-for="file in fileList" :key="file.id">
+        {{ file.name }}
+      </li>
+    </ul>
+    </div>
+    
+    <!-- Buttons -->
+    <div id="app">
+    <div class="button-container">
+      <button class="btn btn-prime" @click="setFileCategory('all')">All</button>
+      <button class="btn btn-succ" @click="setFileCategory('video')">Video</button>
+      <button class="btn btn-dang" @click="setFileCategory('music')">Music</button>
+      <button class="btn btn-inf" @click="setFileCategory('image')">Image</button>
+      <button class="btn btn-warn" @click="setFileCategory('doc')">Document</button>
+      <button class="btn btn-prime" @click="setFileCategory('others')">Others</button>
+      <button class="btn btn-succ" @click="shareFiles">Share</button>
+      <button class="btn btn-dang" @click="moveToRecycleBin">Recycle Bin</button>
+      <button class="btn btn-inf" @click="uploadFiles">Upload</button>
+      <button class="btn btn-warn" @click="createNewFolder">New Folder</button>
+      <button class="btn btn-prime" @click="deleteBatch">Delete Batch</button>
+      <button class="btn btn-succ" @click="moveBatch">Move Batch</button>
+    </div>
+
+  </div>
+
   <header>
     <div class="row">
       <div class="column">
@@ -127,9 +175,12 @@
       </div>
     </div>
   </header>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="app.js"></script>
   <footer>
     <p style="text-align: center;">&copy; 2023 Home Cloud Initiative. All rights reserved.</p>
 </footer>
+
 </body>
 
 </html>

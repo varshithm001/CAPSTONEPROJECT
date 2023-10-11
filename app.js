@@ -1,70 +1,112 @@
 const app = new Vue({
-  el: '#app',
-  data: {
-      isLoggedIn: false,
-      login: {
-          email: '',
-          password: ''
-      },
-      register: {
-          email: '',
-          nickname: '',
-          password: ''
-      },
-      emailForPasswordReset: '',
-      response: null,
-      userData: null,
-      customerDetails: {
-          email: '',
-          password: '',
-          phone: '',
-          address: '',
-          dob: ''
-      }
-  },
-  methods: {
-      loginUser() {
-          // Simulate a response from the backend
-          // For simplicity, let's assume the correct email is "test@example.com"
-          const correctEmail = "test@example.com";
-
-          if (this.login.email === correctEmail) {
-              this.response = {
-                  status: 'success',
-                  code: 200,
-                  info: 'Request Successful',
-                  data: null
-              };
-              this.isLoggedIn = true;
-              this.userData = { nickname: "Varshith" }; // Replace with actual user data if available
-          } else {
-              this.response = {
-                  status: 'error',
-                  code: 404,
-                  info: "The email address you entered isn't connected to an account. Check you email address and log in.",
-                  data: null
-              };
-              this.isLoggedIn = false;
-              this.userData = null;
+    el: '#app',
+    data: {
+        isLoggedIn: false,
+        selectedCategory: 'all',
+        pageNo:1,
+        fileList:['hi'],
+        login: {
+            email: '',
+            password: ''
+        },
+        register: {
+            email: '',
+            nickname: '',
+            password: ''
+        },
+        emailForPasswordReset: '',
+        response: null,
+        userData: null,
+        customerDetails: {
+            email: '',
+            password: '',
+            phone: '',
+            address: '',
+            dob: ''
+        },
+        fileData: {
+            selectedCategory: 'all',
+            pageNo: 1,
+            pageSize: 10,
+            fileList: []
           }
+    },
+    methods: {
+        loginUser() {
+            const loginEndpoint = 'http://localhost:7090/api/login';
+            
+            const requestData = {
+                email: this.login.email,
+                password: this.login.password
+            };
+  
+            fetch(loginEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Login response:', data);
+                this.response = data;
+                if (data.status === 'success') {
+                    this.isLoggedIn = true;
+                    this.userData = { nickname: "Varshith" };
+                } else {
+                    this.isLoggedIn = false;
+                    this.userData = null;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        },
+  
+        registerUser() {
+            const registerEndpoint = 'http://localhost:7090/api/register';
+  
+            const requestData = {
+                email: this.register.email,
+                nickname: this.register.nickname,
+                password: this.register.password
+            };
+  
+            fetch(registerEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Registration response:', data);
+                this.response = data;
+            })
+            .catch(error => console.error('Error:', error));
+        },
+  
+        logout() {
+            const logoutEndpoint = 'http://localhost:7090/api/logout';
+  
+            fetch(logoutEndpoint, {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Logout response:', data);
+                this.isLoggedIn = false;
+                this.userData = null;
+            })
+            .catch(error => console.error('Error:', error));
+  
       },
-      registerUser() {
-          // Simulate a response from the backend
-          this.response = {
-              status: 'success',
-              code: 200,
-              info: 'Request Successful',
-              data: null
-          };
-      },
+
+
       submitRequest() {
-          // Add your logic to handle the password reset request
-          alert('Password reset request submitted for email: ' + this.emailForPasswordReset + '. If this email address is registered, you will receive a link to reset your password.');
+        alert('Password reset request submitted for email: ' + this.emailForPasswordReset + '. If this email address is registered, you will receive a link to reset your password.');
       },
-      logout() {
-          this.isLoggedIn = false;
-          this.userData = null;
-      },
+
       submitCustomerDetails() {
           // Assuming you want to log the form data for now
           console.log('Customer Details Form submitted with the following data:');
@@ -76,6 +118,33 @@ const app = new Vue({
           alert('You have successfully submitted the form.');
 
           // You can perform other actions like sending the data to a server here
-      }
-  }
+      },
+      loadFileList() {
+        const pageNo = this.fileData.pageNo;  // Ensure pageNo is correctly accessed
+        const apiUrl = `http://localhost:7090/api/file/loadDataList?category=${this.fileData.selectedCategory}&pageNo=${pageNo}&pageSize=${this.fileData.pageSize}`;
+        
+        fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+            this.fileData.fileList = data; // Update the file list
+          })
+          .catch(error => console.error('Error:', error));
+    },
+      
+    nextPage() {
+        this.pageNo++;
+        console.log('Next page:', this.pageNo);
+        this.loadFileList();
+    },
+
+    prevPage() {
+        if (this.pageNo > 1) {
+            this.pageNo--;
+            console.log('Previous page:', this.pageNo);
+            this.loadFileList();
+        }
+    }
+      
+}
+
 });
